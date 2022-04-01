@@ -20,7 +20,7 @@ class PrivacyPolicyController extends Controller
     {
         $policyFile = Jetstream::localizedMarkdownPath('policy.md');
 
-        return Inertia::render('PrivacyPolicy', [
+        return Inertia::render(config('jetstream.view.features.privacy', 'PrivacyPolicy'), [
             'policy' => Str::markdown(file_get_contents($policyFile)),
         ]);
     }
