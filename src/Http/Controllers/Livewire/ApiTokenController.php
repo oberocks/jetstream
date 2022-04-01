@@ -15,7 +15,7 @@ class ApiTokenController extends Controller
      */
     public function index(Request $request)
     {
-        return view('api.index', [
+        return view(config('jetstream.view.api.index', 'api.index'), [
             'request' => $request,
             'user' => $request->user(),
         ]);
