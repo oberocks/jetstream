@@ -23,4 +23,39 @@ return [
             'show' => 'Teams/Show',
         ],
     ],
+    //
+    // Livewire variation
+    //
+    // 'view' => [
+    //     'api' => [
+    //         'index' => 'api.index',
+    //     ],
+    //     'features' => [
+    //         'privacy' => 'policy',
+    //         'terms' => 'terms',
+    //     ],
+    //     'profile' => [
+    //         'show' => 'profile.show',
+    //     ],
+    //     'teams' => [
+    //         'create' => 'teams.create',
+    //         'show' => 'teams.show',
+    //     ],
+    // ],
+    'uri' => [
+        'api' => [
+            'index' => '/user/api-tokens',
+        ],
+        'features' => [
+            'privacy' => '/privacy-policy',
+            'terms' => '/terms-of-service',
+        ],
+        'profile' => [
+            'show' => '/user/profile',
+        ],
+        'teams' => [
+            'create' => '/teams/create',
+            'show' => '/teams/{team}',
+        ],
+    ],
 ];
