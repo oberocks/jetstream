@@ -19,7 +19,7 @@ class PrivacyPolicyController extends Controller
     {
         $policyFile = Jetstream::localizedMarkdownPath('policy.md');
 
-        return view('policy', [
+        return view(config('jetstream.view.features.privacy', 'policy'), [
             'policy' => Str::markdown(file_get_contents($policyFile)),
         ]);
     }
