@@ -12,8 +12,8 @@ use Laravel\Jetstream\Jetstream;
 
 Route::group(['middleware' => config('jetstream.middleware', ['web'])], function () {
     if (Jetstream::hasTermsAndPrivacyPolicyFeature()) {
-        Route::get('/terms-of-service', [TermsOfServiceController::class, 'show'])->name('terms.show');
-        Route::get('/privacy-policy', [PrivacyPolicyController::class, 'show'])->name('policy.show');
+        Route::get(config('jetstream.uri.features.terms', '/terms-of-service'), [TermsOfServiceController::class, 'show'])->name('terms.show');
+        Route::get(config('jetstream.uri.features.privacy', '/privacy-policy'), [PrivacyPolicyController::class, 'show'])->name('policy.show');
     }
 
     $authMiddleware = config('jetstream.guard')
@@ -26,18 +26,18 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
 
     Route::group(['middleware' => array_values(array_filter([$authMiddleware, $authSessionMiddleware, 'verified']))], function () {
         // User & Profile...
-        Route::get('/user/profile', [UserProfileController::class, 'show'])
+        Route::get(config('jetstream.uri.profile.show', '/user/profile'), [UserProfileController::class, 'show'])
                     ->name('profile.show');
 
         // API...
         if (Jetstream::hasApiFeatures()) {
-            Route::get('/user/api-tokens', [ApiTokenController::class, 'index'])->name('api-tokens.index');
+            Route::get(config('jetstream.uri.api.index', '/user/api-tokens'), [ApiTokenController::class, 'index'])->name('api-tokens.index');
         }
 
         // Teams...
         if (Jetstream::hasTeamFeatures()) {
-            Route::get('/teams/create', [TeamController::class, 'create'])->name('teams.create');
-            Route::get('/teams/{team}', [TeamController::class, 'show'])->name('teams.show');
+            Route::get(config('jetstream.uri.teams.create', '/teams/create'), [TeamController::class, 'create'])->name('teams.create');
+            Route::get(config('jetstream.uri.teams.show', '/teams/{team}'), [TeamController::class, 'show'])->name('teams.show');
             Route::put('/current-team', [CurrentTeamController::class, 'update'])->name('current-team.update');
 
             Route::get('/team-invitations/{invitation}', [TeamInvitationController::class, 'accept'])
