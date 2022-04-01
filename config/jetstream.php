@@ -7,6 +7,11 @@ return [
     'middleware' => ['web'],
     'features' => [Features::accountDeletion()],
     'profile_photo_disk' => 'public',
+
+    //
+    // Inertia View Paths Variation (Path Syntax)
+    //
+
     'view' => [
         'api' => [
             'index' => 'API/Index',
@@ -23,9 +28,11 @@ return [
             'show' => 'Teams/Show',
         ],
     ],
+
     //
-    // Livewire variation
+    // Livewire View Paths Variation (Dot Syntax)
     //
+
     // 'view' => [
     //     'api' => [
     //         'index' => 'api.index',
@@ -42,6 +49,11 @@ return [
     //         'show' => 'teams.show',
     //     ],
     // ],
+
+    //
+    // Inertia & Livewire Route URI Strings
+    //
+
     'uri' => [
         'api' => [
             'index' => '/user/api-tokens',
