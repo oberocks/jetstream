@@ -24,7 +24,7 @@ class TeamController extends Controller
             abort(403);
         }
 
-        return view('teams.show', [
+        return view(config('jetstream.view.teams.show', 'teams.show'), [
             'user' => $request->user(),
             'team' => $team,
         ]);
@@ -40,7 +40,7 @@ class TeamController extends Controller
     {
         Gate::authorize('create', Jetstream::newTeamModel());
 
-        return view('teams.create', [
+        return view(config('jetstream.view.teams.create', 'teams.create'), [
             'user' => $request->user(),
         ]);
     }
