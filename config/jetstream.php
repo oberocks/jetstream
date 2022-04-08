@@ -39,25 +39,4 @@ return [
             'show' => '/teams/{team}',
         ],
     ],
-
-    //
-    // Livewire View Paths Variation (Dot Syntax)
-    //
-
-    // 'view' => [
-    //     'api' => [
-    //         'index' => 'api.index',
-    //     ],
-    //     'features' => [
-    //         'privacy' => 'policy',
-    //         'terms' => 'terms',
-    //     ],
-    //     'profile' => [
-    //         'show' => 'profile.show',
-    //     ],
-    //     'teams' => [
-    //         'create' => 'teams.create',
-    //         'show' => 'teams.show',
-    //     ],
-    // ],
 ];
