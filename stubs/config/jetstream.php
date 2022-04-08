@@ -78,4 +78,62 @@ return [
 
     'profile_photo_disk' => 'public',
 
+    /*
+    |--------------------------------------------------------------------------
+    | View File Paths for Client Facing Vue Pages
+    |--------------------------------------------------------------------------
+    |
+    | This configuration value determines the default view Vue files that
+    | will be used for various client-facing Jetstream views, enabling
+    | customization of view files used to present to your application's users
+    | without having to touch any Jetstream functinoalities directly.
+    |
+    */
+
+    'view' => [
+        'api' => [
+            'index' => 'API/Index',
+        ],
+        'features' => [
+            'privacy' => 'PrivacyPolicy',
+            'terms' => 'TermsOfService',
+        ],
+        'profile' => [
+            'show' => 'Profile/Show',
+        ],
+        'teams' => [
+            'create' => 'Teams/Create',
+            'show' => 'Teams/Show',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | URI Strings Paths for Client Facing Vue Pages
+    |--------------------------------------------------------------------------
+    |
+    | This configuration value determines the default Jetstream view page
+    | URI's that will be used for various client-facing Jetstream views, enabling
+    | customization of the page URI's used to present to your application's users
+    | without having to touch any Jetstream functinoalities directly.
+    |
+    */
+
+    'uri' => [
+        'api' => [
+            'index' => '/user/api-tokens',
+        ],
+        'features' => [
+            'privacy' => '/privacy-policy',
+            'terms' => '/terms-of-service',
+        ],
+        'profile' => [
+            'show' => '/user/profile',
+        ],
+        'teams' => [
+            'create' => '/teams/create',
+            'show' => '/teams/{team}',
+        ],
+    ],
+
 ];
