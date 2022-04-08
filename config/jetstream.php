@@ -7,11 +7,6 @@ return [
     'middleware' => ['web'],
     'features' => [Features::accountDeletion()],
     'profile_photo_disk' => 'public',
-
-    //
-    // Inertia View Paths Variation (Path Syntax)
-    //
-
     'view' => [
         'api' => [
             'index' => 'API/Index',
@@ -26,6 +21,22 @@ return [
         'teams' => [
             'create' => 'Teams/Create',
             'show' => 'Teams/Show',
+        ],
+    ],
+    'uri' => [
+        'api' => [
+            'index' => '/user/api-tokens',
+        ],
+        'features' => [
+            'privacy' => '/privacy-policy',
+            'terms' => '/terms-of-service',
+        ],
+        'profile' => [
+            'show' => '/user/profile',
+        ],
+        'teams' => [
+            'create' => '/teams/create',
+            'show' => '/teams/{team}',
         ],
     ],
 
@@ -49,25 +60,4 @@ return [
     //         'show' => 'teams.show',
     //     ],
     // ],
-
-    //
-    // Inertia & Livewire Route URI Strings
-    //
-
-    'uri' => [
-        'api' => [
-            'index' => '/user/api-tokens',
-        ],
-        'features' => [
-            'privacy' => '/privacy-policy',
-            'terms' => '/terms-of-service',
-        ],
-        'profile' => [
-            'show' => '/user/profile',
-        ],
-        'teams' => [
-            'create' => '/teams/create',
-            'show' => '/teams/{team}',
-        ],
-    ],
 ];
