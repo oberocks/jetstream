@@ -122,6 +122,12 @@ class InstallCommand extends Command
 
         // Update Configuration...
         $this->replaceInFile('inertia', 'livewire', config_path('jetstream.php'));
+        $this->replaceInFile('API/Index', 'api.index', config_path('jetstream.php'));
+        $this->replaceInFile('PrivacyPolicy', 'policy', config_path('jetstream.php'));
+        $this->replaceInFile('TermsOfService', 'terms', config_path('jetstream.php'));
+        $this->replaceInFile('Profile/Show', 'profile.show', config_path('jetstream.php'));
+        $this->replaceInFile('Teams/Create', 'teams.create', config_path('jetstream.php'));
+        $this->replaceInFile('Teams/Show', 'teams.show', config_path('jetstream.php'));
         // $this->replaceInFile("'guard' => 'web'", "'guard' => 'sanctum'", config_path('auth.php'));
 
         // NPM Packages...
